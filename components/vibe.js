@@ -20,13 +20,13 @@ const Vibe = () => {
           }}
         >
           <Col lg={5} style={{ marginTop: 150 }}>
-            <Link href="/Artists/Kyule">
+            <Link href="/Kyule">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>
                 Prev
               </Button>
             </Link>
 
-            <Link className="btn" href="/Artists/Z1M">
+            <Link className="btn" href="/Z1M">
               <Button
                 className="btn-box1"
                 style={{ fontWeight: 500, marginLeft: 25 }}

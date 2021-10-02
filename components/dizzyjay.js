@@ -22,13 +22,13 @@ const Dizzy = () => {
           }}
         >
           <Col lg={5} style={{ marginTop: 150 }}>
-            <Link href="/Artists/Arya">
+            <Link href="/Arya">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>
                 Prev
               </Button>
             </Link>
 
-            <Link href="/Artists/Kyule">
+            <Link href="/Kyule">
               <Button
                 className="btn-box1"
                 style={{ fontWeight: 500, marginLeft: 25 }}

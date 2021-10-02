@@ -57,12 +57,12 @@ const Hero = () => {
                   className="hero-btn"
                   style={{
                     fontWeight: 600,
-                    fontSize: 20,
+             
                     marginBottom: 50,
                     marginRight: 10,
                   }}
                 >
-                  INFO
+                  About
                 </Button>
               </Link>
 
@@ -71,12 +71,12 @@ const Hero = () => {
                   className="hero-btn"
                   style={{
                     fontWeight: 600,
-                    fontSize: 20,
+     
                     marginLeft: 20,
                     marginBottom: 50,
                   }}
                 >
-                  NFTs
+                  Collections
                 </Button>
               </Link>
             </Col>

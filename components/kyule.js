@@ -20,13 +20,13 @@ const Kyule = () => {
           }}
         >
           <Col lg={5} style={{ marginTop: 150 }}>
-            <Link href="/Artists/DizzyJay">
+            <Link href="/DizzyJay">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>
                 Prev
               </Button>
             </Link>
 
-            <Link href="/Artists/Vibe">
+            <Link href="/Vibe">
               <Button
                 className="btn-box1"
                 style={{ fontWeight: 500, marginLeft: 25 }}

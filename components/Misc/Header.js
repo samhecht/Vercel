@@ -70,7 +70,7 @@ const Header = () => {
               <a href="/Misc/FAQ">about</a>
             </li>
             <li style={{ marginBottom: 20 }}>
-              <a href="/Misc/Artists">NFTs</a>
+              <a href="/Misc/Artists">Artists</a>
             </li>
             <li style={{ marginBottom: 20 }}>
               <a href="/Misc/Members">Members</a>
