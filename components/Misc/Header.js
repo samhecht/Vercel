@@ -51,7 +51,10 @@ const Header = () => {
   return (
     <div className="box">
       <header tabindex="0">
-        EVO <Image src="/images/Icons/evo.png" width={50} height={50} /> DAO
+    
+          EVO <Image src="/images/Icons/evo.png" width={50} height={50} /> DAO
+     
+   
       </header>
 
       <div id="nav-container">
@@ -76,8 +79,9 @@ const Header = () => {
               <a href="/Misc/Members">Members</a>
             </li>
             <li style={{ marginBottom: 20 }}>
-   
+              <a href="/Misc/101">Crypto 101</a>
             </li>
+            <li style={{ marginBottom: 20 }}></li>
             <li class="small">
               <a href="https://twitter.com/EVODAOnft">
                 {" "}

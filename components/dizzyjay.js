@@ -37,12 +37,11 @@ const Dizzy = () => {
               </Button>
             </Link>
             <div
-        
               style={{
                 marginTop: 20,
                 marginBottom: 20,
                 width: 360,
-                margin: 50
+                margin: 50,
               }}
             >
               <h1
@@ -59,6 +58,14 @@ const Dizzy = () => {
                 outdoors and the emerging vision of the metaverse, his art lies
                 there, just beyond.
               </h5>
+              <a href="https://twitter.com/EVODAOnft">
+                {" "}
+                <img
+                  src="/images/Icons/twitter.png"
+                  className="icon"
+                  style={{ height: 25, width: 25, justifyContent: "center" }}
+                />{" "}
+              </a>
             </div>
             <Link href="/Members">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>
@@ -92,30 +99,24 @@ const Dizzy = () => {
             }}
           >
             <Col lg={12} style={{ marginTop: 0 }}>
- 
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/DizzyJay/D-1.jpg"
-     
-                    width={500}
-                    height={500}
-                  ></Image>
- 
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/DizzyJay/D-1.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
 
             <Col lg={12} style={{ marginTop: 20 }}>
- 
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/DizzyJay/D-2.jpg"
-       
-                    width={500}
-                    height={500}
-                  ></Image>
-        
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/DizzyJay/D-2.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
           </Col>
@@ -129,29 +130,23 @@ const Dizzy = () => {
             }}
           >
             <Col lg={12} style={{ marginTop: 0 }}>
-    
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/DizzyJay/D-3.jpg"
-           
-                    width={500}
-                    height={500}
-                  ></Image>
-         
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/DizzyJay/D-3.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
             <Col lg={12} style={{ marginTop: 20 }}>
-        
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/DizzyJay/D-4.jpg"
-            
-                    width={500}
-                    height={500}
-                  ></Image>
-      
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/DizzyJay/D-4.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
           </Col>

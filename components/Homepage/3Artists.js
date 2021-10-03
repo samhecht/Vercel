@@ -20,7 +20,7 @@ const Artists = () => {
             fontSize: 50,
             fontWeight: 600,
             marginTop: 150,
-            color: 'black'
+            color: "black",
           }}
         >
           NFT Artists{" "}
@@ -42,7 +42,7 @@ const Artists = () => {
           textAlign: "center",
         }}
       >
-        <Link href="/Artists/Arya">
+        <Link href="/Arya">
           <Col sm={24} lg={2} style={{ marginTop: 50 }}>
             <div className="AIMG1">
               <Image
@@ -107,7 +107,7 @@ const Artists = () => {
           </Col>
         </Link>
       </Row>
-     
+  
     </div>
   );
 };

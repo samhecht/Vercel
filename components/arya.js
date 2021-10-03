@@ -38,6 +38,7 @@ const Arya = () => {
               >
                 Arya{" "}
               </h1>
+
               <h5 style={{ marginBottom: 5 }}>
                 Every piece of art reflects a feeling. No thoughts are involved
                 during creation, only pure emotion uncovered from the depth of
@@ -45,6 +46,14 @@ const Arya = () => {
                 they come. I share these puzzled pieces of my reality for you to
                 fit in your own tapestry of life.
               </h5>
+              <a href="https://twitter.com/EVODAOnft">
+                {" "}
+                <img
+                  src="/images/Icons/twitter.png"
+                  className="icon"
+                  style={{ height: 25, width: 25, justifyContent: "center" }}
+                />{" "}
+              </a>
             </div>
             <Link href="/Members">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>

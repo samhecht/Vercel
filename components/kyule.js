@@ -55,6 +55,14 @@ const Kyule = () => {
                 through visual hallucinations, he creates only when the swamp
                 mother blesses him with visions.
               </h5>
+              <a href="https://twitter.com/EVODAOnft">
+                {" "}
+                <img
+                  src="/images/Icons/twitter.png"
+                  className="icon"
+                  style={{ height: 25, width: 25, justifyContent: "center" }}
+                />{" "}
+              </a>
             </div>
             <Link href="/Members">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>
@@ -89,30 +97,24 @@ const Kyule = () => {
             }}
           >
             <Col lg={6} style={{ marginTop: 0 }}>
-
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/Kyule/K-1.jpg"
-              
-                    width={500}
-                    height={500}
-                  ></Image>
-        
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/Kyule/K-1.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
             <Col>
               <Col lg={6} style={{ marginTop: 20 }}>
-  
-                  <div className="AIMG">
-                    {" "}
-                    <Image
-                      src="/images/Kyule/K-2.jpg"
-                 
-                      width={500}
-                      height={500}
-                    ></Image>
-       
+                <div className="AIMG">
+                  {" "}
+                  <Image
+                    src="/images/Kyule/K-2.jpg"
+                    width={500}
+                    height={500}
+                  ></Image>
                 </div>
               </Col>
             </Col>

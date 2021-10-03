@@ -16,11 +16,12 @@ const Hero = () => {
   return (
     <div>
       <div
-        className="info"
+        className="abstract"
         style={{
-          maxHeight: 850,
+          maxHeight: 1000,
           paddingBottom: 100,
-          paddingTop: 20,
+          paddingTop: 100,
+          scrollPaddingBottom: 300,
         }}
       >
         <Container>
@@ -29,7 +30,7 @@ const Hero = () => {
               justifyContent: "left",
               margin: "auto",
               alignContent: "left",
-              paddingTop: 100,
+              paddingTop: 50,
               textAlign: "left",
               maxWidth: 1000,
             }}
@@ -38,7 +39,7 @@ const Hero = () => {
               <div style={{ marginTop: 150, marginBottom: 10 }}>
                 <h1
                   style={{
-                    color: "white",
+                    color: "black",
                     marginBottom: 25,
                     fontSize: 50,
                     fontWeight: 700,
@@ -47,7 +48,7 @@ const Hero = () => {
                   Bigger Than One Collection{" "}
                 </h1>
 
-                <h5 style={{ color: "white", marginBottom: 50 }}>
+                <h5 style={{ color: "black", marginBottom: 50 }}>
                   Bringing Artists and Collectors Together
                 </h5>
               </div>
@@ -57,7 +58,7 @@ const Hero = () => {
                   className="hero-btn"
                   style={{
                     fontWeight: 600,
-             
+
                     marginBottom: 50,
                     marginRight: 10,
                   }}
@@ -71,7 +72,7 @@ const Hero = () => {
                   className="hero-btn"
                   style={{
                     fontWeight: 600,
-     
+
                     marginLeft: 20,
                     marginBottom: 50,
                   }}
@@ -81,8 +82,23 @@ const Hero = () => {
               </Link>
             </Col>
           </Row>
+          <Row
+            style={{
+              justifyContent: "center",
+              alignContent: "center",
+              margin: "auto",
+              height: 5,
+            }}
+          >
+            <Col span={24}>
+              <div className="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </Col>
+          </Row>
         </Container>
-
       </div>
     </div>
   );

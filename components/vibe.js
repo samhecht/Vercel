@@ -53,8 +53,16 @@ const Vibe = () => {
               <h5 style={{ marginBottom: 10 }}>
                 Creator of abstract landscapes/portraits created using
                 generative adversarial networks (GANs) and different machine
-                learning techniques. each is one of a kind.
+                learning techniques. Each is one of a kind.
               </h5>
+              <a href="https://twitter.com/EVODAOnft">
+                {" "}
+                <img
+                  src="/images/Icons/twitter.png"
+                  className="icon"
+                  style={{ height: 25, width: 25, justifyContent: "center" }}
+                />{" "}
+              </a>
             </div>
             <Link className="btn" href="/Members">
               <Button className="btn-box1" style={{ fontWeight: 500 }}>
@@ -88,30 +96,24 @@ const Vibe = () => {
             }}
           >
             <Col lg={12} style={{ marginTop: 0 }}>
-     
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/Vibe/Vibe-1.jpg"
-           
-                    width={500}
-                    height={500}
-                  ></Image>
-        
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/Vibe/Vibe-1.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
 
             <Col lg={12} style={{ marginTop: 20 }}>
-        
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/Vibe/Vibe-2.jpg"
-       
-                    width={500}
-                    height={500}
-                  ></Image>
-      
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/Vibe/Vibe-2.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
           </Col>
@@ -125,29 +127,23 @@ const Vibe = () => {
             }}
           >
             <Col lg={12} style={{ marginTop: 0 }}>
-     
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/Vibe/Vibe-3.jpg"
-        
-                    width={500}
-                    height={500}
-                  ></Image>
-   
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/Vibe/Vibe-3.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
             <Col lg={12} style={{ marginTop: 20 }}>
-  
-                <div className="AIMG">
-                  {" "}
-                  <Image
-                    src="/images/Vibe/Vibe-4.jpg"
-     
-                    width={500}
-                    height={500}
-                  ></Image>
-     
+              <div className="AIMG">
+                {" "}
+                <Image
+                  src="/images/Vibe/Vibe-4.jpg"
+                  width={500}
+                  height={500}
+                ></Image>
               </div>
             </Col>
           </Col>
