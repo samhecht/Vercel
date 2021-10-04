@@ -2,8 +2,9 @@ import React from "react";
 import { Container, Button, Col, Row } from "reactstrap";
 import Link from "next/link";
 import Image from "next/image";
+import CompetitionGallery from "./Competition/CompetitionGallery";
 
-const Arya = () => {
+const Arya = () => {  
   return (
     <div style={{ backgroundColor: "white" }}>
       <Container>

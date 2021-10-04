@@ -37,6 +37,11 @@ const menu = (
         FAQ
       </a>
     </Menu.Item>
+    <Menu.Item key ="4">
+      <Link href="/CompetitionGalleryPage">
+        <a>Competition Entries</a>
+      </Link>
+    </Menu.Item>
   </Menu>
 );
 
@@ -76,7 +81,9 @@ const Header = () => {
               <a href="/Misc/Members">Members</a>
             </li>
             <li style={{ marginBottom: 20 }}>
-   
+              <Link href="/Misc/CompetitionGalleryPage">
+                <a>Competition Entries</a>
+              </Link>
             </li>
             <li class="small">
               <a href="https://twitter.com/EVODAOnft">
