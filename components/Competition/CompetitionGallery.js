@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Header from "../Misc/Header";
-import { Pagination, Card } from "antd";
+import { Pagination } from "antd";
 
 const IMAGES_PER_PAGE = 9;
 
 const CompetitionGallery = ({ art }) => {
   const [page, setPage] = useState({start: 0, end: 9});
+
 
   const handleChange = (value) => {
     let end = value * IMAGES_PER_PAGE;

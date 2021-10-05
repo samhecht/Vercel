@@ -12,7 +12,17 @@ const CompetitionGalleryPage = ({ art }) => {
 
 export async function getServerSideProps(context) {
   try {
-    const storage = new Storage({keyFilename: "protean-keyword-326516-89bdde152843.json"});
+    const { client_email, private_key, project_id } = JSON.parse(
+      Buffer.from(process.env.GCLOUD_CREDENTIALS, 'base64').toString()
+    );
+    
+    console.log(client_email, private_key, project_id);
+    // const storage = new Storage({keyFilename: "protean-keyword-326516-89bdde152843.json"});
+    const storage = new Storage({
+      client_email: client_email,
+      private_key: private_key,
+      project_id: project_id
+    });
     const [files] = await storage.bucket("evo-test-bucket").getFiles();
     console.log('Files:');
     let file_urls = files.map(file => {
@@ -24,6 +34,7 @@ export async function getServerSideProps(context) {
     }
   } catch (e)
   {
+    console.log("Authentication failed");
     console.log(e);
     return {
       props: { art: []}, // will be passed to the page component as props
