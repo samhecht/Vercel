@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "../Misc/Header";
+import CompImageGalContainer from "./CompImageGalContainer";
 import { Pagination } from "antd";
 
 const IMAGES_PER_PAGE = 9;
@@ -46,18 +47,7 @@ const CompetitionGallery = ({ art }) => {
       }}
       >
         {
-          current_page.map(url => {
-            return (
-              <div                 
-                style={{
-                  width: "26%",
-                  marginTop: "100px",
-                }}
-              >
-                <img src={url} />
-              </div>
-            );
-          })
+          current_page.map(url => (<CompImageGalContainer url={url} />))
         }
       </div>
       <Pagination
