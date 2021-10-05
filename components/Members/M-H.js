@@ -10,7 +10,7 @@ const { Panel } = Collapse;
 const MembersHome = () => {
   return (
     <div style={{ maxHeight: 3000 }}>
-      <div className="backd1" style={{ maxHeight: 3000 }}>
+      <div className="backd1" style={{ maxHeight: 600 }}>
         <Row
           style={{
             justifyContent: "left",
@@ -73,3 +73,4 @@ const MembersHome = () => {
   );
 };
 export default MembersHome;
+
