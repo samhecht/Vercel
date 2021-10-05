@@ -7,125 +7,129 @@ import Link from "next/link";
      const InfoA = () => {
        return (
          <div>
-           <Row
-             style={{
-               justifyContent: "center",
-               alignContent: "center",
-
-               paddingTop: 100,
-               marginBottom: 50,
-             }}
+           <div
+             className="backd1"
+             style={{ height: 400, justifyContent: "center" }}
            >
-             <div
-               className="a-box"
+             {" "}
+             <Row
                style={{
+                 justifyContent: "center",
                  margin: "auto",
+                 alignContent: "center",
+                 textAlign: "center",
 
-                 borderRadius: 15,
-                 marginBottom: 50,
+                 paddingTop: 50,
+          
+                 maxWidth: 1200,
                }}
              >
-               <Col lg={12}>
-                 <Col span={10} style={{ margin: 50 }}>
-                   <div style={{ margin: "auto", maxWidth: 400 }}>
-                     <h3 style={{}}> Creation</h3>
-                     <div>
-                       <p style={{}}>
-                         The legacy art world has over looked talented artists
-                         due to nepotism and backroom deals.
-                       </p>
-                     </div>
-                   </div>
-                 </Col>
-                 <Col span={5} style={{ margin: 50 }}>
-                   <div style={{ margin: "auto", maxWidth: 400 }}>
-                     <h3 style={{}}> Action</h3>
-                     <div>
-                       <p style={{}}>
-                         EVO-DAO empowers individual 1/1 Artists through a
-                         democratic artist accelerator.
-                       </p>
-                     </div>
-                   </div>
-                 </Col>
-                 <Col span={5} style={{ margin: 50 }}>
-                   <div style={{ margin: "auto", maxWidth: 400 }}>
-                     <h3 style={{}}> Application</h3>
-
-                     <div>
-                       <p style={{}}>
-                         Standout from the crowd with democratically determined
-                         talent.
-                       </p>
-                     </div>
-                   </div>
-                 </Col>
-               </Col>
-             </div>
-
-             <div
-               className="info-box"
-               style={{
-                 margin: "auto",
-                 borderRadius: 15,
-                 marginBottom: 50,
-               }}
-             >
-               <Col lg={12} style={{ padding: 10 }}>
-                 <Col span={10} style={{ margin: 50 }}>
-                   <div style={{ margin: "auto", maxWidth: 400 }}>
-                     <h3 style={{ color: "transparent" }}> Creation</h3>
-                     <div>
-                       <p style={{ color: "transparent" }}>
-                         The legacy art world has over looked talented artists
-                         due to nepotism and backroom deals.
-                       </p>
-                     </div>
-                   </div>
-                 </Col>
-                 <Col span={5} style={{ margin: 50 }}>
-                   <div style={{ margin: "auto", maxWidth: 400 }}>
-                     <h3 style={{ color: "transparent" }}> Action</h3>
-                     <div>
-                       <p style={{ color: "transparent" }}>
-                         EVO-DAO empowers individual 1/1 Artists through a
-                         democratic artist accelerator.
-                       </p>
-                     </div>
-                   </div>
-                 </Col>
-                 <Col span={5} style={{ margin: 50 }}>
-                   <div style={{ margin: "auto", maxWidth: 400 }}>
-                     <h3 style={{ color: "transparent" }}> Application</h3>
-
-                     <div>
-                       <p style={{ color: "transparent" }}>
-                         Standout from the crowd with democratically determined
-                         talent.
-                       </p>
-                     </div>
-                   </div>
-                 </Col>
-               </Col>
-             </div>
-           </Row>
-           <Row
-             style={{
-               justifyContent: "center",
-               alignContent: "center",
-
-               marginBottom: 50,
-             }}
-           >
-             <Link href="/Misc/101">
-               <Button
-                 className="hero-btn"
-                 style={{ marginTop: 10, fontWeight: 500 }}
+               <h1
+                 style={{
+                   fontSize: 50,
+                   fontWeight: 700,
+                   color: "white",
+                
+                   marginTop: 100,
+                 }}
                >
-                 Crypto 101
-               </Button>
-             </Link>
-           </Row>
+                 Breaking the Mold{" "}
+               </h1>
+
+               <Link href="/Misc/101">
+                 <Button
+                   className="hero-btn"
+                   style={{
+                     marginLeft: 0,
+                     marginTop: 50,
+                     fontWeight: 500,
+                     width: 150,
+                   }}
+                 >
+                   Crypto 101
+                 </Button>
+               </Link>
+             </Row>
+           </div>
+
+           <div style={{ background: "white" }}>
+             <Row
+               style={{
+                 justifyContent: "center",
+                 alignContent: "center",
+                 margin: "auto",
+                 paddingTop: 100,
+                 marginBottom: 50,
+                 maxWidth: 1200,
+               }}
+             >
+               <Col span={3} style={{ margin: 50 }}>
+                 <div className="a-box">
+                   <div style={{ margin: "auto", maxWidth: 300 }}>
+                     <h3 style={{ fontWeight: 600 }}> Creation</h3>
+                     <div
+                       className="m-text"
+                       style={{
+                         textAlign: "left",
+                         marginTop: 10,
+                         marginBottom: 10,
+                         width: 110,
+                       }}
+                     ></div>
+                     <div>
+                       <p style={{}}>
+                         The legacy art world has over looked talented artists
+                         due to nepotism and backroom deals.
+                       </p>
+                     </div>
+                   </div>
+                 </div>
+               </Col>
+               <Col span={3} style={{ margin: 50 }}>
+                 <div className="a-box">
+                   <div style={{ margin: "auto", maxWidth: 300 }}>
+                     <h3 style={{ fontWeight: 600 }}> Action</h3>
+                     <div
+                       className="m-text"
+                       style={{
+                         textAlign: "left",
+                         marginTop: 10,
+                         marginBottom: 10,
+                         width: 85,
+                       }}
+                     ></div>
+                     <div>
+                       <p style={{}}>
+                         EVO-DAO empowers individual 1/1 Artists through a
+                         democratic artist accelerator.
+                       </p>
+                     </div>
+                   </div>
+                 </div>
+               </Col>
+               <Col span={3} style={{ margin: 50 }}>
+                 <div className="a-box">
+                   <div style={{ margin: "auto", maxWidth: 300 }}>
+                     <h3 style={{ fontWeight: 600 }}> Application</h3>
+                     <div
+                       className="m-text"
+                       style={{
+                         textAlign: "left",
+                         marginTop: 10,
+                         marginBottom: 10,
+                         width: 150,
+                       }}
+                     ></div>
+                     <div>
+                       <p>
+                         EVO-DAO's democratic screening process allows artists differentiate themselves from other creators.
+                       </p>
+                     </div>
+                   </div>
+                 </div>
+               </Col>
+             </Row>
+           </div>
          </div>
        );
      };
