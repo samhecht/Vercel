@@ -39,16 +39,16 @@ const Hero = () => {
               <div style={{ marginTop: 150, marginBottom: 10 }}>
                 <h1
                   style={{
-                    color: "black",
+                    color: "white",
                     marginBottom: 25,
                     fontSize: 50,
                     fontWeight: 700,
                   }}
                 >
-                  Bigger Than One Collection{" "}
+                  Supporting Talented Artists{" "}
                 </h1>
 
-                <h5 style={{ color: "black", marginBottom: 50 }}>
+                <h5 style={{ color: "white", marginBottom: 50 }}>
                   Bringing Artists and Collectors Together
                 </h5>
               </div>
