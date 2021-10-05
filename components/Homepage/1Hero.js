@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <div>
       <div
-        className="abstract"
+        className="info"
         style={{
           maxHeight: 1000,
           paddingBottom: 100,

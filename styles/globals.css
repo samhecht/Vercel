@@ -62,7 +62,7 @@ p {
       
 .backd1 {
   background: linear-gradient(rgb(0, 0, 0),  rgba(0, 0, 0, 0.253)), url("/images/Background/b-box .jpg");
-  height:600px; /* You must set a specified height */
+  height:900px; /* You must set a specified height */
   width: 100%;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -98,37 +98,29 @@ p {
   background-position: 0 0;
   box-shadow: inset 0 0 5em rgba(0,0,0,0.5);
   display:flex;
-  height:840px;
+  height:120%;
   justify-content:center;
   animation-duration: 50s;
   animation-iteration-count: infinite;
   animation-name:gradients;
 }
 
-.abstract {
-  background: url("/images/Background/abstract.jpg");
-    height:850px; /* You must set a specified height */
-  width: 100%;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
 
 @keyframes gradients{
   0%{
     background-position: 0 0;
   }
   25%{
-    background-position: -80% 0;
+    background-position: 10% 0;
   }
   35%{
     background-position: 20% 0;
   }
   75%{
-    background-position: 50%;
+    background-position: 30%;
   }
   35%{
-    background-position:-85%;
+    background-position:35%;
   }
   100%{
     background-position: 0 0;
@@ -174,6 +166,7 @@ p {
         transform: rotate(45deg) translate(20px,20px);
     }
 }
+
 
 .btn {
  
@@ -253,16 +246,6 @@ transition: transform .5s ease;
 .AIMG1:hover{
    transform: translateY(-5%);
  background-color: rgb(3, 3, 3);
-  box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
-
-
-
 }
 
 .RIMG {
@@ -272,8 +255,111 @@ border-radius: 15px;
 
 }
 
+/* Icons*/ 
 
+.m-icon {
+  color: white;
+}
 /*Boxes*/
+.m-text {
+  background-image:linear-gradient(to right,  rgb(0, 0, 0),rgba(0, 4, 255, 0.733));
+  height: 4px;
+  width: 60px;
+  border-radius: 10px;
+}
+.m-text1 {
+  background-image:linear-gradient(to right,  rgb(0, 0, 0),rgba(0, 4, 255, 0.733));
+  height: 4px;
+  width: 120px;
+  border-radius: 10px;
+}
+.m-text2 {
+  background-image:linear-gradient(to right,  rgb(0, 0, 0),rgba(0, 4, 255, 0.733));
+  height: 4px;
+  width: 95px;
+  border-radius: 10px;
+}
+.m-text3 {
+  background-image:linear-gradient(to right, rgb(0, 0, 0), rgba(0, 4, 255, 0.733));
+  height: 4px;
+  width: 75px;
+  border-radius: 10px;
+}
+
+
+
+.m-box {
+
+width:auto;
+height:auto;
+  background-image:linear-gradient(to right, rgb(0, 0, 0), rgba(0, 4, 255, 0.733));
+  background-size: cover;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.2px);
+-webkit-backdrop-filter: blur(2.2px);
+border: 1px solid rgba(255, 255, 255, 0.445);
+padding: 10px;
+border-radius: 50%; 
+  background-position: 0 0;
+  box-shadow: inset 0 0 5em rgba(0,0,0,0.5);
+  display:flex;
+
+  justify-content:center;
+z-index: -1;
+
+
+}
+
+.m-box1 {
+
+width: auto;
+height:auto;
+  background-image:linear-gradient(to right, rgb(0, 0, 0), rgba(0, 4, 255, 0.733));
+  background-size: cover;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.2px);
+-webkit-backdrop-filter: blur(2.2px);
+padding: 10px;
+border-radius: 50%; 
+
+  background-position: 0 0;
+  box-shadow: inset 0 0 5em rgba(0,0,0,0.5);
+  display:flex;
+
+  justify-content:center;
+z-index: -1;
+
+
+}
+.m-box2 {
+
+width:auto;
+height:auto;
+  background-image: linear-gradient(to right, rgba(0, 4, 255, 0.733), rgb(0, 0, 0));
+  background-size: cover;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.2px);
+-webkit-backdrop-filter: blur(2.2px);
+border: 1px solid rgba(255, 255, 255, 0.445);
+padding: 10px;
+border-radius: 50%; 
+  background-position: 0 0;
+  box-shadow: inset 0 0 5em rgba(0,0,0,0.5);
+  display:flex;
+
+  justify-content:center;
+z-index: -1;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+
+
+}
+
+
 
 .a-box {
 width:auto;
@@ -284,7 +370,7 @@ backdrop-filter: blur(8.2px);
 -webkit-backdrop-filter: blur(2.2px);
 border: 1px solid rgba(255, 255, 255, 0.445);
 padding: 10px;
-border-radius: 5px;
+border-radius: 10px;
 z-index: -1;
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -440,17 +526,18 @@ color:white;
 
 
 .hero-btn {
-background-color:  transparent;
-color: #004CFF;
+background-color:  white;
+color: black;
 transition: .1 ease;
 border-radius: 20px;
+max-width: 200px;
 }
 
 .hero-btn:hover {
-  background-image:  url("/images/Background/abstract.jpg");
-color: rgb(0, 0, 0);
-border: transparent;
+background-color: transparent;
+color: white;
 transform: scale(.95);
+max-width: 200px;
 }
 
 
@@ -778,4 +865,18 @@ img {
   height: auto;
   width: 100%;
 }
+
+
+
+
+
+
+.page {
+  background: #dde1e7;
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+
+}
+
 
