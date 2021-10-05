@@ -8,14 +8,14 @@ const { Panel } = Collapse;
 const FAQ = () => {
 
   return (
-    <div className="back">
+    <div className="back" style={{marginTop: -50}}>
       <Row
         style={{
           alignItems: "center",
           justifyContent: "center",
           marginBottom: 0,
           paddingTop: 0,
-          maxWidth: 1000,
+          maxWidth: 1200,
           margin: "auto",
           maxHeight: 500,
         }}
@@ -55,6 +55,8 @@ const FAQ = () => {
 }
 
 export default FAQ;
+
+
 
 
 
