@@ -19,7 +19,7 @@ const Hero = () => {
         className="info"
         style={{
           maxHeight: 1000,
-          paddingBottom: 100,
+          paddingBottom: 260,
           paddingTop: 100,
           scrollPaddingBottom: 300,
         }}
