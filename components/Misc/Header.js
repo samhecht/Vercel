@@ -42,6 +42,11 @@ const menu = (
         <a>Competition Entries</a>
       </Link>
     </Menu.Item>
+    <Menu.Item key ="5">
+      <Link href="/SubmitArtPage">
+        <a>Submit for Competition</a>
+      </Link>
+    </Menu.Item>
   </Menu>
 );
 
@@ -86,9 +91,14 @@ const Header = () => {
             <li style={{ marginBottom: 20 }}>
               <a href="/Misc/101">Crypto 101</a>
             </li>
-            <li>
+            <li style={{ marginBottom: 20 }}>
               <Link href="/Misc/CompetitionGalleryPage">
                 <a>Competition Entries</a>
+              </Link>
+            </li>
+            <li style={{ marginBottom: 20 }}>
+              <Link href="/Misc/SubmitArtPage">
+                <a>Submit for Competition</a>
               </Link>
             </li>
             <li style={{ marginBottom: 20 }}></li>
