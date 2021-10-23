@@ -15,5 +15,6 @@ module.exports = withImages()
 module.exports = {
   env: {
     GCLOUD_CREDENTIALS: process.env.GCLOUD_CREDENTIALS,
+	FIRESTORE_API_KEY: process.env.FIRESTORE_API_KEY,
   },
 };

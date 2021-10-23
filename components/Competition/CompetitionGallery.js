@@ -24,7 +24,7 @@ const CompetitionGallery = () => {
     {
         // INITIALIZE firebase
         const firebaseConfig = {
-          apiKey: "AIzaSyCCCHm8cMQnAfXVkmaXwlQzBzt5SS-_ZHE",
+          apiKey: process.env.FIRESTORE_API_KEY,
           authDomain: "protean-keyword-326516.firebaseapp.com",
           projectId: "protean-keyword-326516",
           storageBucket: "protean-keyword-326516.appspot.com",
@@ -48,7 +48,6 @@ const CompetitionGallery = () => {
           ...doc.data(),
           artId: doc.id
         });
-        console.log("The doc.id w'ere pushing is: ", doc.id);
       });
       setArtwork(artwork_objs);
 
