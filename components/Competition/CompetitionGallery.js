@@ -107,7 +107,7 @@ const CompetitionGallery = () => {
           textAlign: "center",
           paddingTop: "100px"
         }}>
-          Competition Entries
+          Artist Entries
       </h1>
       <EvoLogin />
       <div style={{  
