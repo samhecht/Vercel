@@ -1,7 +1,20 @@
 {
+  "/Arya": "pages/Arya.html",
+  "/DizzyJay": "pages/DizzyJay.html",
+  "/Kyule": "pages/Kyule.html",
+  "/Misc/101": "pages/Misc/101.html",
+  "/Misc/Artists": "pages/Misc/Artists.html",
+  "/Misc/CompetitionGalleryPage": "pages/Misc/CompetitionGalleryPage.js",
+  "/Misc/FAQ": "pages/Misc/FAQ.html",
+  "/Misc/Marketplaces": "pages/Misc/Marketplaces.html",
+  "/Misc/Members": "pages/Misc/Members.html",
+  "/Misc/SubmitArtPage": "pages/Misc/SubmitArtPage.html",
+  "/Vibe": "pages/Vibe.html",
+  "/Z1M": "pages/Z1M.html",
   "/_app": "pages/_app.js",
+  "/api/hello": "pages/api/hello.js",
+  "/": "pages/index.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Misc/Members": "pages/Misc/Members.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
