@@ -1,47 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Button } from "reactstrap";
 import { getAuth, signInWithPopup, TwitterAuthProvider } from "firebase/auth";
-import { initializeApp } from "@firebase/app";
+import fbApp from "../../firebase/firebaseClient.ts";
 import { getFirestore, getDoc, setDoc, doc } from "firebase/firestore";
 
 const EvoLogin = () => {
-    const [firebaseApp, setFirebaseApp] = useState(null);
-    const [twitProvider, setTwitProvider] = useState(null);
-
-    useEffect(() => {
-        if (firebaseApp === null) {
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-                apiKey: "AIzaSyCCCHm8cMQnAfXVkmaXwlQzBzt5SS-_ZHE",
-                authDomain: "protean-keyword-326516.firebaseapp.com",
-                projectId: "protean-keyword-326516",
-                storageBucket: "protean-keyword-326516.appspot.com",
-                messagingSenderId: "852906376122",
-                appId: "1:852906376122:web:bba9be0c5f42521f18bb83",
-                measurementId: "G-P5PEMYT2BF"
-            };
-
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            setFirebaseApp(app);
-        }
-
-        if (twitProvider === null) {
-            const provider = new TwitterAuthProvider();
-            setTwitProvider(provider);
-        }
-    });
     // Login through twitter
     const handleLogin = () => {
-        if (firebaseApp === null || twitProvider === null) {
-            console.log("no firebase app initialized");
-            return;
-        }
-        const auth = getAuth();
+        const auth = getAuth(fbApp);
         signInWithPopup(auth, new TwitterAuthProvider())
         .then(async (result) => {
             // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
@@ -81,7 +47,6 @@ const EvoLogin = () => {
             const credential = TwitterAuthProvider.credentialFromError(error);
 
             console.log("error", errorCode, errorMessage, email, credential);
-            // ...
         });
     }
 

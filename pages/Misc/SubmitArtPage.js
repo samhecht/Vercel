@@ -8,7 +8,6 @@ const SubmitArtPage = () => {
       <Header />
       <MyForm />
     </>
-
   );
 };
 
