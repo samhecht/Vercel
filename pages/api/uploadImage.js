@@ -12,11 +12,13 @@ handler.post(async(req, res) => {
   const { client_email, private_key, project_id } = JSON.parse(
     Buffer.from(process.env.GCLOUD_CREDENTIALS, 'base64').toString()
   );
-
+  
   const storage = new Storage({
-    client_email: client_email,
-    private_key: private_key,
-    project_id: project_id
+    projectId: project_id,
+    credentials: {
+      client_email: client_email,
+      private_key: private_key,
+    }
   });
   
   const bucket = storage.bucket("evo-test-bucket");
