@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Misc/Header";
 import CompImageGalContainer from "./CompImageGalContainer";
-import EvoLogin from "../Authentication/EvoLogin";
 import { Pagination } from "antd";
 // import { initializeApp } from "@firebase/app";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
@@ -81,7 +80,6 @@ const CompetitionGallery = () => {
         }}>
           Competition Entries
       </h1>
-      <EvoLogin />
       <div style={{  
         marginTop: "30px",
         display: "flex",

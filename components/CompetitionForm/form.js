@@ -100,7 +100,7 @@ const MyForm = () => {
     
         axios({
           method: "post",
-          url: "/api/hello",
+          url: "/api/uploadImage",
           data: form_data,
           headers: { "Content-Type": "multipart/form-data" },
         })
