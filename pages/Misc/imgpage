@@ -1,0 +1,13 @@
+
+import React from "react";
+import Layout from "../../components/Layout";
+import IMG from "../../components/Competition/imgpage";
+
+const Img = () => {
+  return (
+    <Layout pageTitle="EVO-DAO">
+<IMG/>
+    </Layout>
+  );
+};
+export default Img;
