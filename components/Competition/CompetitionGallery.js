@@ -1,84 +1,56 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Misc/Header";
 import CompImageGalContainer from "./CompImageGalContainer";
-import EvoLogin from "../EvoLogin";
 import { Pagination } from "antd";
-import { initializeApp } from "@firebase/app";
-import { getFirestore, getDocs, collection, addDoc } from "firebase/firestore";
+// import { initializeApp } from "@firebase/app";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
+import fbApp from "../../firebase/firebaseClient.ts";
 
 const IMAGES_PER_PAGE = 9;
 
 const CompetitionGallery = () => {
   const [page, setPage] = useState({start: 0, end: 9});
   const [artwork, setArtwork] = useState([]);
-  const [firebaseApp, setFirebaseApp] = useState(null);
-  const [likedArtwork, setLikedArtwork] = useState([]);
   const [currUserId, setCurrUserId] = useState("");
 
 
-  // Setup firebase integrations
-  // These should probably be moved to a separate file at some point
   useEffect(async () => {
-    if (firebaseApp === null)
-    {
-        // INITIALIZE firebase
-        const firebaseConfig = {
-          apiKey: "AIzaSyCCCHm8cMQnAfXVkmaXwlQzBzt5SS-_ZHE",
-          authDomain: "protean-keyword-326516.firebaseapp.com",
-          projectId: "protean-keyword-326516",
-          storageBucket: "protean-keyword-326516.appspot.com",
-          messagingSenderId: "852906376122",
-          appId: "1:852906376122:web:bba9be0c5f42521f18bb83",
-          measurementId: "G-P5PEMYT2BF"
-      };
+    // Grab database
+    const db = getFirestore(fbApp);
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-
-      setFirebaseApp(app);
-    } else {
-      // Get all images
-      const db = getFirestore();
-
-      const querySnapshot = await getDocs(collection(db, "Artwork"));
-      let artwork_objs = [];
-      querySnapshot.forEach((doc) => {
-        artwork_objs.push({
-          ...doc.data(),
-          artId: doc.id
-        });
-        console.log("The doc.id w'ere pushing is: ", doc.id);
+    // Get all art entries
+    const querySnapshot = await getDocs(collection(db, "Artwork"));
+    let artwork_objs = [];
+    let unsub_art = querySnapshot.forEach((doc) => {
+      artwork_objs.push({
+        ...doc.data(),
+        artId: doc.id
       });
-      setArtwork(artwork_objs);
+    });
 
-      // AUTH and liked images
-      const auth = getAuth();
-      onAuthStateChanged(auth, async (user) => {
+    // Set internal art state
+    setArtwork(artwork_objs);
 
-        if (user) {
-          const uid = user.uid;
-          const db = getFirestore();
-          const querySnapshot = await getDocs(collection(db, "users", uid, "likedArtwork"));
-          let likedArtworkTemp = [];
-          querySnapshot.forEach((doc) => {
-            console.log(`Is in liked: ${doc.id} => ${doc.data()}`);
-            likedArtworkTemp.push(doc.id);
-          });
-          setCurrUserId(uid);
-          setLikedArtwork(likedArtworkTemp);
+    // Handle authentication
+    const auth = getAuth(fbApp);
+    let unsub_auth = onAuthStateChanged(auth, async (user) => {
+      console.log("auth state changed", user);
+      if (user) {
+        const uid = user.uid;
+        setCurrUserId(uid);
 
-        } else {
-          setCurrUserId("");
-          setLikedArtwork([]);
-          console.log("User not logged in");
-        }
+      } else {
+        setCurrUserId("");
+      }
+    });
 
-      });
-
-
+    // Clean up listeners
+    return () => {
+      unsub_auth();
+      unsub_art();
     }
-  }, [firebaseApp]);
+  }, [currUserId]);
   
 
   const handleChange = (value) => {
@@ -94,7 +66,6 @@ const CompetitionGallery = () => {
   };
 
   const current_page = artwork.slice(page.start, page.end);
-  console.log(likedArtwork);
   return (
     <>
       <div>
@@ -109,7 +80,6 @@ const CompetitionGallery = () => {
         }}>
           Competition Entries
       </h1>
-      <EvoLogin />
       <div style={{  
         marginTop: "30px",
         display: "flex",
@@ -124,7 +94,6 @@ const CompetitionGallery = () => {
           current_page.map(art_obj => (
               <CompImageGalContainer 
                 artwork_obj={art_obj} 
-                isLiked={false}
                 currUserId={currUserId}
               />
             )
