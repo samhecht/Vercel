@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Card, Button } from "antd";
 import { deleteDoc, doc, getDoc, getFirestore, increment, setDoc, updateDoc } from "@firebase/firestore";
 import fbApp from "../../firebase/firebaseClient.ts";
+import LoginPopupPrompt from "../Authentication/LoginPopupPrompt";
 
 const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
 
   const [likedByMe, setLikedByMe] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(async () => {
     // Grab database
@@ -28,6 +30,12 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
   });
 
   const likeImage = async () => {
+
+    if (currUserId === "") {
+      setShowLoginModal(true);
+      return;
+    }
+
     try {
       const db = getFirestore(fbApp);
       const art_doc = doc(db, "Artwork", artwork_obj.artId);
@@ -44,6 +52,11 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
   }
 
   const unlikeImage = async () => {
+    if (currUserId === "") {
+      setShowLoginModal(true);
+      return;
+    }
+
     try {
       const db = getFirestore(fbApp);
       const art_doc = doc(db, "Artwork", artwork_obj.artId);
@@ -65,11 +78,13 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
           marginTop: "100px",
         }}
       >
-          <a href={artwork_obj.publicUrl}>
-              <img src={artwork_obj.publicUrl} />
-          </a>
-          <p>Likes: {artwork_obj.likes}</p>
-          <Button onClick={unlikeImage}>Un-Like</Button>
+
+        <LoginPopupPrompt visibleProp={showLoginModal} />
+        <a href={artwork_obj.publicUrl}>
+            <img src={artwork_obj.publicUrl} />
+        </a>
+        <p>Likes: {artwork_obj.likes}</p>
+        <Button onClick={unlikeImage}>Un-Like</Button>
           
       </Card>
     );
@@ -81,6 +96,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
           marginTop: "100px",
         }}
       >
+          <LoginPopupPrompt visibleProp={showLoginModal} setShowLoginModal={setShowLoginModal} />
           <a href={artwork_obj.publicUrl}>
               <img src={artwork_obj.publicUrl} />
           </a>

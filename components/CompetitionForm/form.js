@@ -13,7 +13,7 @@ import React, { useEffect, useState } from 'react';
 import fbApp from '../../firebase/firebaseClient.ts';
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
-
+import LoginPopupPrompt from '../Authentication/LoginPopupPrompt';
 
 const formItemLayout = {
   labelCol: {
@@ -38,6 +38,7 @@ const MyForm = () => {
 
   const [form] = Form.useForm();
   const [currUserId, setCurrUserId] = useState("");
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
     // Handle authentication
@@ -47,7 +48,6 @@ const MyForm = () => {
       if (user) {
         const uid = user.uid;
         setCurrUserId(uid);
-
       } else {
         setCurrUserId("");
       }
@@ -61,8 +61,10 @@ const MyForm = () => {
   const onFinish = (values) => {
     if (currUserId === "") {
       console.log("not logged in");
+      setShowLoginModal(true);
       return;
     }
+
     let form_data = new FormData();
 
     const artistName = values["username"];
@@ -146,6 +148,7 @@ const MyForm = () => {
           paddingTop: "100px"
       }}
     >
+      <LoginPopupPrompt visibleProp={showLoginModal} setShowLoginModal={setShowLoginModal} />
       <Row
           style={{
               marginTop: 500,

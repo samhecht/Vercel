@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Misc/Header";
 import CompImageGalContainer from "./CompImageGalContainer";
-import EvoLogin from "../EvoLogin";
+import EvoLogin from "../Authentication/EvoLogin";
 import { Pagination } from "antd";
 // import { initializeApp } from "@firebase/app";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
