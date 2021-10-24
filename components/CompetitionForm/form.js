@@ -8,7 +8,6 @@ import {
     message,
   } from 'antd';
   import { InboxOutlined } from '@ant-design/icons';
-  import axios from 'axios';
   import React from 'react';
   
   const formItemLayout = {
@@ -19,8 +18,6 @@ import {
       span: 14,
     },
   };
-  
-  const endpoint = 'https://protean-keyword-326516.ue.r.appspot.com/push_form_to_db';
   
   const normFile = (e) => {
     console.log('Upload event:', e);
