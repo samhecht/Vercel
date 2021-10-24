@@ -12,16 +12,18 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
     const db = getFirestore(fbApp);
 
     // Check for a document indicating we liked this artwork
-    const docRef = doc(db, "users", currUserId, "likedArtwork", artwork_obj.artId);
-    const docSnap = await getDoc(docRef);
-    
-    // Update like state
-    if (docSnap.exists()) {
-      if (!likedByMe)
-        setLikedByMe(true);
-    } else {
-      if (likedByMe)
-        setLikedByMe(false);
+    if (currUserId) {
+      const docRef = doc(db, "users", currUserId, "likedArtwork", artwork_obj.artId);
+      const docSnap = await getDoc(docRef);
+      
+      // Update like state
+      if (docSnap.exists()) {
+        if (!likedByMe)
+          setLikedByMe(true);
+      } else {
+        if (likedByMe)
+          setLikedByMe(false);
+      }
     }
   });
 
@@ -66,6 +68,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
           <a href={artwork_obj.publicUrl}>
               <img src={artwork_obj.publicUrl} />
           </a>
+          <p>Likes: {artwork_obj.likes}</p>
           <Button onClick={unlikeImage}>Un-Like</Button>
           
       </Card>
@@ -81,7 +84,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
           <a href={artwork_obj.publicUrl}>
               <img src={artwork_obj.publicUrl} />
           </a>
-
+          <p>Likes: {artwork_obj.likes}</p>
           <Button onClick={likeImage}>likeImage</Button>
  
       </Card>

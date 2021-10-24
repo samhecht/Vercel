@@ -4,7 +4,7 @@ import CompImageGalContainer from "./CompImageGalContainer";
 import EvoLogin from "../EvoLogin";
 import { Pagination } from "antd";
 // import { initializeApp } from "@firebase/app";
-import { getFirestore, getDocs, collection, addDoc } from "firebase/firestore";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
 import fbApp from "../../firebase/firebaseClient.ts";
 
