@@ -6,7 +6,9 @@ import { Pagination } from "antd";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
 import fbApp from "../../firebase/firebaseClient.ts";
-
+import Styles from "../Styles.js/Styles";
+import HeroV from "../Hero/Hero";
+import { Row } from "reactstrap";
 const IMAGES_PER_PAGE = 9;
 
 const CompetitionGallery = () => {
@@ -69,49 +71,46 @@ const CompetitionGallery = () => {
   return (
     <>
       <div>
-      <Header />
+        <Header />
+        <HeroV />
       </div>
 
-      <div>
-      <h1 style={{
-          color: "white", 
-          textAlign: "center",
-          paddingTop: "100px"
-        }}>
-          Competition Entries
-      </h1>
-      <div style={{  
-        marginTop: "30px",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignContent: "center",
-        width: "100%",
-        flexWrap: "wrap",
-      }}
-      >
-        {
-          current_page.map(art_obj => (
-              <CompImageGalContainer 
-                artwork_obj={art_obj} 
-                currUserId={currUserId}
-              />
-            )
-          )
-        }
-      </div>
-      <Pagination
+      <Row style={{ alignContent: "right", backgroundColor: "white",}}>
+        <Styles />
+   
+          <Pagination
+            style={{
+              display: "block",
+              textAlign: "center",
+              marginTop: "30px",
+            }}
+            defaultCurrent={1}
+            defaultPageSize={IMAGES_PER_PAGE} //default size of page
+            onChange={handleChange}
+            total={artwork.length} //total number of card data available
+          />
+        </Row>
+      
+        <div
           style={{
-            display: "block",
-            textAlign: "center",
-            marginTop: "30px"
+            marginTop: "0px",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignContent: "center",
+            width: "100%",
+            flexWrap: "wrap",
+            backgroundColor: "white",
           }}
-          defaultCurrent={1}
-          defaultPageSize={IMAGES_PER_PAGE} //default size of page
-          onChange={handleChange}
-          total={artwork.length} //total number of card data available
-        />
-      </div>
+        >
+          {current_page.map((art_obj) => (
+            <CompImageGalContainer
+              artwork_obj={art_obj}
+              currUserId={currUserId}
+            />
+          ))}
+        </div>
+     
     </>
   );
 };

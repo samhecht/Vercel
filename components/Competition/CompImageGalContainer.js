@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button } from "antd";
+import { Card, Button, Row } from "antd";
 import { deleteDoc, doc, getDoc, getFirestore, increment, setDoc, updateDoc } from "@firebase/firestore";
 import fbApp from "../../firebase/firebaseClient.ts";
 import LoginPopupPrompt from "../Authentication/LoginPopupPrompt";
-
+import Link from "next/dist/client/link";
+import LikeButton from "../LikeButton/LikeButton";
 const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
 
   const [likedByMe, setLikedByMe] = useState(false);
@@ -72,10 +73,11 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
 
   if (likedByMe) {
     return (
-      <Card                
+       <div
+        className="card"
         style={{
-          width: "26%",
-          marginTop: "100px",
+          justifyContent: "center",
+          margin: "50px",
         }}
       >
 
@@ -86,24 +88,43 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
         <p>Likes: {artwork_obj.likes}</p>
         <Button onClick={unlikeImage}>Un-Like</Button>
           
-      </Card>
+      </div>
     );
   } else {
     return (
-      <Card                
+      <div
+        className="card"
         style={{
-          width: "26%",
-          marginTop: "100px",
+          justifyContent: "center",
+          margin: "50px",
         }}
       >
-          <LoginPopupPrompt visibleProp={showLoginModal} setShowLoginModal={setShowLoginModal} />
-          <a href={artwork_obj.publicUrl}>
+        <LoginPopupPrompt
+          visibleProp={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+        />
+        <Link href="/ImgS">
+          <div className="cardinner">
+            <a href={artwork_obj.publicUrl}>
               <img src={artwork_obj.publicUrl} />
-          </a>
-          <p>Likes: {artwork_obj.likes}</p>
-          <Button onClick={likeImage}>likeImage</Button>
- 
-      </Card>
+            </a>
+          </div>
+        </Link>
+        <Row>
+          <LikeButton onClick={likeImage} />
+          <p style={{ paddingTop: 1, fontSize: 12 }}>{artwork_obj.likes}</p>
+          <p
+            style={{
+              paddingTop: 1,
+              fontSize: 12,
+              textAlign: "center",
+              width: 230,
+            }}
+          >
+            Artwork Title
+          </p>
+        </Row>
+      </div>
     );
   }
 
