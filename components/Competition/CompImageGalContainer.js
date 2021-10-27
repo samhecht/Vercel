@@ -8,6 +8,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
 
   const [likedByMe, setLikedByMe] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [likes, setLikes] = useState(artwork_obj.likes);
 
   useEffect(async () => {
     // Grab database
@@ -46,6 +47,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
       await setDoc(doc(db, "users", currUserId, "likedArtwork", artwork_obj.artId), {});
 
       setLikedByMe(true);
+      setLikes(likes + 1);
     } catch(e) {
       console.log("Couldnt add like document: ", e);
     }
@@ -65,6 +67,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
       });
       await deleteDoc(doc(db, "users", currUserId, "likedArtwork", artwork_obj.artId));
       setLikedByMe(false);
+      setLikes(likes - 1);
     } catch (e) {
       console.log("Couldn't upadte document: ", e);
     }
@@ -83,7 +86,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
         <a href={artwork_obj.publicUrl}>
             <img src={artwork_obj.publicUrl} />
         </a>
-        <p>Likes: {artwork_obj.likes}</p>
+        <p>Likes: {likes}</p>
         <Button onClick={unlikeImage}>Un-Like</Button>
           
       </Card>
@@ -100,7 +103,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
           <a href={artwork_obj.publicUrl}>
               <img src={artwork_obj.publicUrl} />
           </a>
-          <p>Likes: {artwork_obj.likes}</p>
+          <p>Likes: {likes}</p>
           <Button onClick={likeImage}>likeImage</Button>
  
       </Card>

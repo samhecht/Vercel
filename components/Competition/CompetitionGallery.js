@@ -97,7 +97,7 @@ const CompetitionGallery = () => {
     } else if (b_passes && !a_passes) {
       return 1;
     }
-    
+
     return b.likes - a.likes;
   });
 
