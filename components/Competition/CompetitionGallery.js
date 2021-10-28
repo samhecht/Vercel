@@ -107,145 +107,154 @@ const CompetitionGallery = () => {
   return (
     <>
       <div>
-      <Header />
+        <Header />
       </div>
 
       <div>
-      <h1 style={{
-          color: "white", 
-          textAlign: "center",
-          paddingTop: "100px"
-        }}>
+        <h1
+          style={{
+            backgroundColor: "white",
+            textAlign: "center",
+            paddingTop: "100px",
+          }}
+        >
           Competition Entries
-      </h1>
-      <div>
-        <h1>Filters</h1>
-        <Checkbox.Group>
-          <Row>
-            <Col span={8}>
-              <Checkbox value="abstract" 
-                style={{ lineHeight: '32px', color: "white" }}
-                onChange={(e) => {
-                  console.log("Actual filters: ", filters);
-                  let new_filters = new Set(filters);
-                  new_filters.delete("abstract");
-                  if (e.target.checked) {
-                    new_filters.add("abstract");
-                  } 
-                  setFilters(new_filters);
-                }}
-              >
-                Abstract
-              </Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox 
-                value="generative" 
-                style={{ lineHeight: '32px', color: "white" }}
-                onChange={(e) => {
-                  let new_filters = new Set(filters);
-                  new_filters.delete("generative");
-                  if (e.target.checked) {
-                    new_filters.add("generative");
-                  } 
-                  setFilters(new_filters);
-                }}
-              >
-                Generative
-              </Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox 
-                value="3d" 
-                style={{ lineHeight: '32px', color: "white" }}
-                onChange={(e) => {
-                  let new_filters = new Set(filters);
-                  new_filters.delete("3d");
-                  if (e.target.checked) {
-                    new_filters.add("3d");
-                  } 
-                  setFilters(new_filters);
-                }}
-              >
-                3d
-              </Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox 
-                value="stylized" 
-                style={{ lineHeight: '32px', color: "white" }}
-                onChange={(e) => {
-                  let new_filters = new Set(filters);
-                  new_filters.delete("stylized");
-                  if (e.target.checked) {
-                    new_filters.add("stylized");
-                  } 
-                  setFilters(new_filters);
-                }}
-              >
-                Styllized
-              </Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox 
-                value="derivative" 
-                style={{ lineHeight: '32px', color: "white" }}
-                onChange={(e) => {
-                  let new_filters = new Set(filters);
-                  new_filters.delete("derivative");
-                  if (e.target.checked) {
-                    new_filters.add("derivative");
-                  } 
-                  setFilters(new_filters);
-                }}
-              >
-                Derivative
-              </Checkbox>
-            </Col>
-            <Col span={8}>
-              <Checkbox 
-                value="humour" 
-                style={{ lineHeight: '32px', color: "white" }}
-                onChange={(e) => {
-                  let new_filters = new Set(filters);
-                  new_filters.delete("humour");
-                  if (e.target.checked) {
-                    new_filters.add("humour");
-                  } 
-                  setFilters(new_filters);
-                }}
-              >
-                Humour
-              </Checkbox>
-            </Col>
-          </Row>
-        </Checkbox.Group>
-      </div>
-      <div style={{  
-        marginTop: "30px",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-        alignContent: "center",
-        width: "100%",
-        flexWrap: "wrap",
-      }}
-      >
-        {
-          current_page.map(art_obj => (
-              <CompImageGalContainer 
-                artwork_obj={art_obj} 
-                currUserId={currUserId}
-              />
-            )
-          )
-        }
-      </div>
-      <Pagination
+        </h1>
+        <div
+          style={{
+            backgroundColor: "white",
+            textAlign: "center",
+            paddingTop: "100px",
+   
+          }}
+        >
+          <h1>Filters</h1>
+          <Checkbox.Group>
+            <Row>
+              <Col span={8}>
+                <Checkbox
+                  value="abstract"
+                  style={{ lineHeight: "32px", color: "black" }}
+                  onChange={(e) => {
+                    console.log("Actual filters: ", filters);
+                    let new_filters = new Set(filters);
+                    new_filters.delete("abstract");
+                    if (e.target.checked) {
+                      new_filters.add("abstract");
+                    }
+                    setFilters(new_filters);
+                  }}
+                >
+                  Abstract
+                </Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox
+                  value="generative"
+                  style={{ lineHeight: "32px", color: "black" }}
+                  onChange={(e) => {
+                    let new_filters = new Set(filters);
+                    new_filters.delete("generative");
+                    if (e.target.checked) {
+                      new_filters.add("generative");
+                    }
+                    setFilters(new_filters);
+                  }}
+                >
+                  Generative
+                </Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox
+                  value="3d"
+                  style={{ lineHeight: "32px", color: "black" }}
+                  onChange={(e) => {
+                    let new_filters = new Set(filters);
+                    new_filters.delete("3d");
+                    if (e.target.checked) {
+                      new_filters.add("3d");
+                    }
+                    setFilters(new_filters);
+                  }}
+                >
+                  3d
+                </Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox
+                  value="stylized"
+                  style={{ lineHeight: "32px", color: "black" }}
+                  onChange={(e) => {
+                    let new_filters = new Set(filters);
+                    new_filters.delete("stylized");
+                    if (e.target.checked) {
+                      new_filters.add("stylized");
+                    }
+                    setFilters(new_filters);
+                  }}
+                >
+                  Styllized
+                </Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox
+                  value="derivative"
+                  style={{ lineHeight: "32px", color: "black" }}
+                  onChange={(e) => {
+                    let new_filters = new Set(filters);
+                    new_filters.delete("derivative");
+                    if (e.target.checked) {
+                      new_filters.add("derivative");
+                    }
+                    setFilters(new_filters);
+                  }}
+                >
+                  Derivative
+                </Checkbox>
+              </Col>
+              <Col span={8}>
+                <Checkbox
+                  value="humour"
+                  style={{ lineHeight: "32px", color: "black" }}
+                  onChange={(e) => {
+                    let new_filters = new Set(filters);
+                    new_filters.delete("humour");
+                    if (e.target.checked) {
+                      new_filters.add("humour");
+                    }
+                    setFilters(new_filters);
+                  }}
+                >
+                  Humour
+                </Checkbox>
+              </Col>
+            </Row>
+          </Checkbox.Group>
+        </div>
+        <div
+          style={{
+            marginTop: "0px",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignContent: "center",
+            width: "100%",
+            flexWrap: "wrap",
+            backgroundColor:'white'
+          }}
+        >
+          {current_page.map((art_obj) => (
+            <CompImageGalContainer
+              artwork_obj={art_obj}
+              currUserId={currUserId}
+            />
+          ))}
+        </div>
+        <Pagination
           style={{
             display: "block",
             textAlign: "center",
-            marginTop: "30px"
+            marginTop: "30px",
           }}
           defaultCurrent={1}
           defaultPageSize={IMAGES_PER_PAGE} //default size of page

@@ -880,3 +880,16 @@ img {
 }
 
 
+.card{
+background-color: rgb(255, 255, 255);
+  width:350px;
+height: 420px;
+justify-content: center;
+margin: auto;
+border: none;
+}
+.cardinner img{
+  width:350px;
+height: 350px;
+object-fit: cover;
+}

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button } from "antd";
+import { Card, Button, Row } from "antd";
 import { deleteDoc, doc, getDoc, getFirestore, increment, setDoc, updateDoc } from "@firebase/firestore";
 import fbApp from "../../firebase/firebaseClient.ts";
 import LoginPopupPrompt from "../Authentication/LoginPopupPrompt";
-
+import { AiFillHeart } from "react-icons/ai";
 const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
 
   const [likedByMe, setLikedByMe] = useState(false);
@@ -75,37 +75,82 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
 
   if (likedByMe) {
     return (
-      <Card                
-        style={{
-          width: "26%",
-          marginTop: "100px",
-        }}
-      >
-
+      <Card className="card" style={{ margin: 50 }}>
         <LoginPopupPrompt visibleProp={showLoginModal} />
-        <a href={artwork_obj.publicUrl}>
+        <a href="/ImgS">
+          <div className="cardinner">
             <img src={artwork_obj.publicUrl} />
+          </div>
         </a>
-        <p>Likes: {likes}</p>
-        <Button onClick={unlikeImage}>Un-Like</Button>
-          
+        <Row>
+          <Button
+            onClick={unlikeImage}
+            style={{
+              backgroundColor: "white",
+              color: "white",
+              borderColor: "white",
+              borderRadius: 0,
+              borderRadius: "50%",
+
+              width: 30,
+              height: 30,
+            }}
+          >
+            <AiFillHeart
+              style={{
+                marginLeft: "-10px",
+                justifyContent: "center",
+                width: "25px",
+                height: "25px",
+                alignContent: "center",
+                padding: "auto",
+                color: "red",
+              }}
+            />
+          </Button>
+          <p style={{ marginLeft: 5 }}>{artwork_obj.likes}</p>
+        </Row>
       </Card>
     );
   } else {
     return (
-      <Card                
-        style={{
-          width: "26%",
-          marginTop: "100px",
-        }}
-      >
-          <LoginPopupPrompt visibleProp={showLoginModal} setShowLoginModal={setShowLoginModal} />
-          <a href={artwork_obj.publicUrl}>
-              <img src={artwork_obj.publicUrl} />
-          </a>
-          <p>Likes: {likes}</p>
-          <Button onClick={likeImage}>likeImage</Button>
- 
+      <Card className="card" style={{ margin: 50 }}>
+        <LoginPopupPrompt
+          visibleProp={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+        />
+        <a href="/ImgS">
+          <div className="cardinner">
+            <img src={artwork_obj.publicUrl} />
+          </div>
+        </a>
+        <Row>
+          <Button
+            style={{
+              backgroundColor: "white",
+              color: "white",
+              borderColor: "white",
+              borderRadius: 0,
+              borderRadius: "50%",
+
+              width: 30,
+              height: 30,
+            }}
+            onClick={likeImage}
+          >
+            <AiFillHeart
+              style={{
+                color: "black",
+                margin: "auto",
+                justifyContent: "center",
+                width: "25px",
+                height: "25px",
+                marginLeft: "-12px",
+              }}
+            />
+          </Button>
+          <p style={{ marginLeft: 5 }}>{artwork_obj.likes}</p>
+        </Row>
       </Card>
     );
   }
