@@ -24,7 +24,9 @@ const LoginPopupPrompt = ({ visibleProp, setShowLoginModal }) => {
                 <Button key="back" onClick={handleCancel}>
                 No Thanks
                 </Button>,
-                <EvoLogin />
+                <EvoLogin hideModal={() => {
+                    setShowLoginModal(false);
+                }}/>
             ]}
         >
             <p>Please login with Twitter to interact with page</p>

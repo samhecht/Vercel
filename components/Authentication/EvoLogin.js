@@ -4,7 +4,7 @@ import { getAuth, signInWithPopup, TwitterAuthProvider } from "firebase/auth";
 import fbApp from "../../firebase/firebaseClient.ts";
 import { getFirestore, getDoc, setDoc, doc } from "firebase/firestore";
 
-const EvoLogin = () => {
+const EvoLogin = ({ hideModal }) => {
     // Login through twitter
     const handleLogin = () => {
         const auth = getAuth(fbApp);
@@ -48,6 +48,8 @@ const EvoLogin = () => {
 
             console.log("error", errorCode, errorMessage, email, credential);
         });
+
+        hideModal();
     }
 
     return (

@@ -108,7 +108,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
               }}
             />
           </Button>
-          <p style={{ marginLeft: 5 }}>{artwork_obj.likes}</p>
+          <p style={{ marginLeft: 5 }}>{likes}</p>
         </Row>
       </Card>
     );
@@ -149,7 +149,7 @@ const CompImageGalContainer = ({ artwork_obj, currUserId }) => {
               }}
             />
           </Button>
-          <p style={{ marginLeft: 5 }}>{artwork_obj.likes}</p>
+          <p style={{ marginLeft: 5 }}>{likes}</p>
         </Row>
       </Card>
     );
