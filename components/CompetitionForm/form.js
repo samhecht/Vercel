@@ -6,6 +6,7 @@ import {
     Row,
     Col,
     message,
+    Checkbox,
   } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import axios from 'axios';
@@ -72,10 +73,16 @@ const MyForm = () => {
     const artTitle = values["art-title"];
     const inspiration = values["art-inspiration"];
     const description = values["art-description"];
-    const category = values['art-category'];
     const date = Date.now();
     const likes = 0;
     const popularity = 0;
+
+    let category = "";
+
+    values['art-category'].forEach(cat => {
+      // Store categories with a ';' delimiter
+      category += `;${cat}`;
+    });
 
     if (!values['dragger'])
     {
@@ -159,23 +166,6 @@ const MyForm = () => {
               justifyContent: "center",
           }}
       >
-        {/* <div className="text4" style={{ paddingLeft: 10, marginBottom: 50 }}>
-          <div className="text" style={{ width: 300, height: 350 }}>
-            <h1
-              style={{
-                color: "white",
-                textAlign: "left",
-                marginBottom: 10,
-              }}
-            >
-              Submit for Competition
-            </h1>
-            <h4 style={{ color: "black", marginTop: 50, textAlign: "left" }}>
-              Required: a watermarked artwork file (.jpg or .png) under 10mb and
-              a Retweet.
-            </h4>
-          </div>
-        </div> */}
         <h1 style={{color: "white"}}>Submit for Competition</h1>
       </Row>
       <Row
@@ -284,7 +274,7 @@ const MyForm = () => {
                     fontFamily: "sans-serif",
                   }}
                 >
-                  Art Inspiration
+                  Inspiration
                 </label>
               }
               rules={[
@@ -307,7 +297,7 @@ const MyForm = () => {
                     fontFamily: "sans-serif",
                   }}
                 >
-                  Art Description
+                  Description
                 </label>
               }
               rules={[
@@ -319,9 +309,10 @@ const MyForm = () => {
             >
               <Input placeholder="Description..." style={{ height: 100 }} />
             </Form.Item>
-            <Form.Item
-              {...formItemLayout}
-              name="art-category"
+
+
+            <Form.Item 
+              name="art-category" 
               label={
                 <label
                   style={{
@@ -330,18 +321,51 @@ const MyForm = () => {
                     fontFamily: "sans-serif",
                   }}
                 >
-                  Art Category
+                  Category
                 </label>
-              }
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the category of your art",
-                },
-              ]}
+              } 
+              style={{ color: "white" }}
             >
-              <Input placeholder="Category..." style={{ height: 100 }} />
+              <Checkbox.Group>
+                <Row>
+                  <Col span={8}>
+                    <Checkbox value="abstract" 
+                      style={{ lineHeight: '32px', color: "white" }}
+                    >
+                      Abstract
+                    </Checkbox>
+                  </Col>
+                  <Col span={8}>
+                    <Checkbox value="generative" style={{ lineHeight: '32px', color: "white" }}>
+                      Generative
+                    </Checkbox>
+                  </Col>
+                  <Col span={8}>
+                    <Checkbox value="3d" style={{ lineHeight: '32px', color: "white" }}>
+                      3d
+                    </Checkbox>
+                  </Col>
+                  <Col span={8}>
+                    <Checkbox value="stylized" style={{ lineHeight: '32px', color: "white" }}>
+                      Styllized
+                    </Checkbox>
+                  </Col>
+                  <Col span={8}>
+                    <Checkbox value="derivative" style={{ lineHeight: '32px', color: "white" }}>
+                      Derivative
+                    </Checkbox>
+                  </Col>
+                  <Col span={8}>
+                    <Checkbox value="humour" style={{ lineHeight: '32px', color: "white" }}>
+                      Humour
+                    </Checkbox>
+                  </Col>
+                </Row>
+              </Checkbox.Group>
             </Form.Item>
+
+
+
             <Form.Item label="Dragger">
               <Form.Item
                 name="dragger"
