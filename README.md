@@ -1,7 +1,7 @@
 # Vercel
 This is a web application that allows artists to upload images to art competitions, and allows the judges to go through and vote for their favorite pieces. Previous competitions have rewarded the top artist with over 100 SOL. This application primarily uses React along with node services and a Google Cloud backend. This application was developed very rapidly in order to deliver user requests, so there is still a lot of refactoring and cleanup to be done in terms of organization and general DRY principles.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and hosted with Vercel.
 
 ## Getting Started
 
